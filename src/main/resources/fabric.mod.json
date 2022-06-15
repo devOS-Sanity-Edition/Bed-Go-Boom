@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "id": "fabrictemplatemod",
+  "id": "bedgoboom",
   "version": "${version}",
 
-  "name": "Fabric Template Mod - Server Side Only",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Bed Go Boom",
+  "description": "This mod makes beds explode in the overworld, but not in the nether or the end.",
   "authors": [
     "devOS: Sanity Edition",
     "Team Nautical"
@@ -18,21 +18,15 @@
   },
 
   "license": "MIT",
-  "icon": "assets/fabrictemplatemod/icon.png",
+  "icon": "assets/bedgoboom/icon.png",
 
-  "environment": "*",
-  "entrypoints": {
-    "server": [
-      "one.devos.nautical.fabrictemplatemod.FabricTemplateModServer"
-    ]
-  },
+  "environment": "server",
   "mixins": [
-    "fabrictemplatemod.mixins.json"
+    "bedgoboom.mixins.json"
   ],
 
   "depends": {
     "fabricloader": ">=0.13.3",
-    "fabric": "*",
     "minecraft": "1.18.2",
     "java": ">=17"
   }
