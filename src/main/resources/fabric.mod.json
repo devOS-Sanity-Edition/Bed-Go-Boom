@@ -20,7 +20,12 @@
   "license": "MIT",
   "icon": "assets/bedgoboom/icon.png",
 
-  "environment": "server",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "one.devos.nautical.bedgoboom.Boom"
+    ]
+  },
   "mixins": [
     "bedgoboom.mixins.json"
   ],

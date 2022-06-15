@@ -1,19 +1,19 @@
 package one.devos.nautical.bedgoboom.mixin;
 
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.BedBlock;
+import net.minecraft.world.level.block.RespawnAnchorBlock;
 import one.devos.nautical.bedgoboom.Boom;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(BedBlock.class)
-public class BedBlockMixin {
+@Mixin(RespawnAnchorBlock.class)
+public class RespawnAnchorBlockMixin {
     @Inject(method = "canSetSpawn", at = @At(value = "HEAD"), cancellable = true)
     private static void youShallNotSet(Level level, CallbackInfoReturnable<Boolean> cir) {
-        if (level.dimension().location().getPath().equalsIgnoreCase("overworld") && Boom.CONFIG.shouldExplodeBedInOverworld()) {
-            cir.setReturnValue(false);
+        if (level.dimension().location().getPath().equalsIgnoreCase("the_end") && Boom.CONFIG.shouldAllowAnchorInEnd()) {
+            cir.setReturnValue(true);
         }
     }
 }
