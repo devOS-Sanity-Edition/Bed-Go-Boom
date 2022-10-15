@@ -1,7 +1,7 @@
 # BedGoBoom
 
 <p align="center">
-  <a href="https://modrinth.com/mod/rainbethunder" target="_blank">
+  <a href="https://modrinth.com/mod/bedgoboom" target="_blank">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://github.com/modrinth/art/blob/main/Branding/Badge/badge-dark__184x72.png?raw=true">
       <img title="modrinth" height="50" src="https://github.com/modrinth/art/blob/main/Branding/Badge/badge-light__184x72.png?raw=true">
