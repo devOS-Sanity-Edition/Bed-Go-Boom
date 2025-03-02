@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class RespawnAnchorBlockMixin {
     @Inject(method = "canSetSpawn", at = @At(value = "HEAD"), cancellable = true)
     private static void youShallNotSet(Level level, CallbackInfoReturnable<Boolean> cir) {
-        if (level.dimension().location().getPath().equalsIgnoreCase("the_end") && Boom.CONFIG.shouldAllowAnchorInEnd()) {
+        if (level.dimension() == Level.END && Boom.CONFIG.shouldAllowAnchorInEnd()) {
             cir.setReturnValue(true);
         }
     }

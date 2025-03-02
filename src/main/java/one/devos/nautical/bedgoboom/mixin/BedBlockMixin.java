@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class BedBlockMixin {
     @Inject(method = "canSetSpawn", at = @At(value = "HEAD"), cancellable = true)
     private static void youShallNotSet(Level level, CallbackInfoReturnable<Boolean> cir) {
-        if (level.dimension().location().getPath().equalsIgnoreCase("overworld") && Boom.CONFIG.shouldExplodeBedInOverworld()) {
+        if (level.dimension() == Level.OVERWORLD && Boom.CONFIG.shouldExplodeBedInOverworld()) {
             cir.setReturnValue(false);
         }
     }
